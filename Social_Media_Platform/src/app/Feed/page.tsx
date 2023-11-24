@@ -1,9 +1,11 @@
 import React from "react";
 import posts from "../../content/posts.json";
+import NavbarPost from "@/components/NavbarPost";
 
 const Post = () => {
   return (
     <div className="flex flex-col justify-center items-center mt-5 ">
+      <NavbarPost/>
       {posts.map((post) => (
         <div className="bg-slate-200 mb-5">
           <div className="flex justify-around items-center">
