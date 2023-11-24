@@ -1,15 +1,33 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import posts from "../../content/posts.json";
 import NavbarPost from "@/components/NavbarPost";
 import { IoAddCircleOutline } from "react-icons/io5";
 
 const Post = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Filter posts based on user input
+  const filteredPosts = posts.filter((post) =>
+    post.user.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
+      <NavbarPost />
       <div className="flex flex-col justify-center items-center mt-5 ">
-        <NavbarPost />
-        {posts.map((post) => (
-          <div className="bg-slate-200 mb-5">
+        {/* Search Input */}
+        <input
+          type="text"
+          placeholder="Search by user name"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="mb-3 px-4 py-2 border rounded-md"
+        />
+
+        {/* Display filtered posts */}
+        {filteredPosts.map((post) => (
+          <div key={post.id} className="bg-slate-200 mb-5">
             <div className="flex justify-around items-center">
               <div className="px-6 py-4 ">
                 <img
@@ -40,9 +58,10 @@ const Post = () => {
             </div>
           </div>
         ))}
+
         <div className="fixed bottom-7 right-7">
           <button>
-            <IoAddCircleOutline size={60}/>
+            <IoAddCircleOutline size={60} />
           </button>
         </div>
       </div>
