@@ -5,7 +5,7 @@ import { FaSquareFacebook } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="bg-black mt-0 flex flex-col ">
+    <div className="bg-gradient-to-b from-gray-700 via-gray-900 to-black mt-0 flex flex-col ">
         <div className=" flex justify-center items-center h-16 font-bold mt-10 text-center">
       <p className="text-white ">
         Made With 💗 by
