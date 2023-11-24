@@ -27,13 +27,13 @@ export default function Home() {
           </div>
           <div className="mt-10 text-center">
             {userId ? (
+               <Link href="/Feed">
               <button className="bg-white  text-black font-semibold py-4 px-10 rounded-full hover:bg-slate-300 transition-colors duration-500 ease-in-out mr-5 my-5 ">
-                <Link href="/Feed">Feed </Link>
+               Feed 
               </button>
+              </Link>
             ) : (
-              <button className="bg-white  text-black font-semibold py-4 px-10 rounded-full hover:bg-slate-300 transition-colors duration-500 ease-in-out mr-5 my-5 ">
-                <Link href="/sign-in">Login</Link>
-              </button>
+             ""
             )}
           </div>
         </div>
