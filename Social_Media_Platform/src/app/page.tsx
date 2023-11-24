@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
+// import Footer from "../components/Footer"
 export default function Home() {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
   return (
@@ -37,6 +38,7 @@ export default function Home() {
             )}
           </div>
         </div>
+        {/* <Footer/> */}
       </div>
     </>
   );
