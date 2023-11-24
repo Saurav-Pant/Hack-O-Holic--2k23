@@ -29,7 +29,7 @@ const Post = () => {
         {filteredPosts.map((post) => (
           <div key={post.id} className="bg-slate-200 mb-5">
             <div className="flex justify-around items-center">
-              <div className="px-6 py-4 ">
+              <div className="px-6 py-4 h-full">
                 <img
                   src={post.user.avatar}
                   alt={`${post.user.name}'s avatar`}
@@ -48,7 +48,7 @@ const Post = () => {
               <img
                 src={post.image}
                 alt={`Post by ${post.user.name}`}
-                className="h-96 w-full"
+                className="h-96 w-96 object-fit"
               />
             </div>
             <div className="flex justify-around mb-5 border-t-2  border-b-2 border-gray-400">
